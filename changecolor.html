@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change color</title>
+  </head>
+  <style>
+      span{
+          display: inline-block;
+        }
+        #white{
+          background-color: aliceblue;
+        }
+      #blue{
+          background-color: #748563;
+        }
+        #purple{
+          background-color: purple;
+      }
+      #black{
+          background-color: rgb(0, 0, 0);
+        }
+        .btn{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: solid 2px gray;
+            cursor: pointer;
+      }
+  </style>
+  <body>
+      <h1 class="text">Change color</h1>
+    <div class="color">
+      <span class="btn" id="white" onclick="changeBg('#ffffff')"></span>
+      <span class="btn" id="blue" onclick="changeBg('#748563')"></span>
+      <span class="btn" id="purple" onclick="changeBg('#114455')"></span>
+      <span class="btn" id="black" onclick="changeBg('#000000')"></span>
+    </div>
+
+    <p class="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error ratione
+      necessitatibus non veritatis quaerat animi excepturi eum odit itaque
+      facere, soluta ullam est harum asperiores vel beatae ipsam doloribus
+      natus?
+    </p>
+  </body>
+  <script>
+      function changeBg(color){
+        document.body.style.backgroundColor = color;
+        let txt = document.getElementsByClassName("text");
+        if(color == "#000000"){
+            for(let elm of txt){
+                elm.style.color ="white";
+            }
+        }
+        else{
+            for(let elm of txt){
+                elm.style.color = "black";
+            }
+        }
+      }
+  </script>
+</html>
